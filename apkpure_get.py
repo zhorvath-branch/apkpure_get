@@ -13,10 +13,10 @@ warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
 ###
 
 # Set Arguments
-about = "This script downloads versioned APKs from APKPure."
+about = "This script downloads APKs from APKPure and writes them to /output."
 parser = argparse.ArgumentParser(description = about)
-parser.add_argument("-a", "--app", required=True, type=str)
-parser.add_argument("-v", "--version", default=None, type=str)
+parser.add_argument("-a", "--app", help="ex: com.appname.android", required=True, type=str)
+parser.add_argument("-v", "--version", help="ex: 8675.309", default=None, type=str)
 args = parser.parse_args()
 app_name = args.app
 app_version = args.version
